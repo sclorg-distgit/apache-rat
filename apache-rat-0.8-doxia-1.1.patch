@@ -1,0 +1,11 @@
+--- apache-rat-0.8-20100827/apache-rat-plugin/src/main/java/org/apache/rat/mp/RatReportMojo.java.doxia-1.1	2010-02-07 17:34:00.000000000 -0700
++++ apache-rat-0.8-20100827/apache-rat-plugin/src/main/java/org/apache/rat/mp/RatReportMojo.java	2010-09-02 10:57:24.904400746 -0600
+@@ -39,7 +39,7 @@
+ import org.apache.maven.artifact.resolver.ArtifactResolver;
+ import org.apache.maven.artifact.versioning.InvalidVersionSpecificationException;
+ import org.apache.maven.artifact.versioning.VersionRange;
+-import org.apache.maven.doxia.module.xhtml.decoration.render.RenderingContext;
++import org.apache.maven.doxia.sink.render.RenderingContext;
+ import org.apache.maven.doxia.site.decoration.Body;
+ import org.apache.maven.doxia.site.decoration.DecorationModel;
+ import org.apache.maven.doxia.site.decoration.Skin;
