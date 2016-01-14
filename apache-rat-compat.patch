@@ -1,0 +1,15 @@
+diff -up apache-rat-0.8/apache-rat-plugin/pom.xml.compat apache-rat-0.8/apache-rat-plugin/pom.xml
+--- apache-rat-0.8/apache-rat-plugin/pom.xml.compat	2011-11-08 22:14:36.000000000 -0700
++++ apache-rat-0.8/apache-rat-plugin/pom.xml	2011-12-06 16:35:28.068167192 -0700
+@@ -122,6 +122,10 @@
+       <artifactId>maven-plugin-testing-harness</artifactId>
+       <version>1.1</version>
+     </dependency>
++    <dependency>
++      <groupId>org.apache.maven</groupId>
++      <artifactId>maven-compat</artifactId>
++    </dependency>
+   </dependencies>
+ 
+   <reporting>
+diff -up apache-rat-0.8/pom.xml.compat apache-rat-0.8/pom.xml
