@@ -7,7 +7,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        0.8
-Release:        13.18%{?dist}
+Release:        13.19%{?dist}
 Summary:        Apache Release Audit Tool (RAT)
 
 License:        ASL 2.0
@@ -23,17 +23,17 @@ BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix_java_common}javapackages-tools
 BuildRequires:  %{?scl_prefix_java_common}maven-local
-BuildRequires:  maven30-maven-antrun-plugin
-BuildRequires:  maven30-maven-dependency-plugin
-BuildRequires:  maven30-maven-install-plugin
-BuildRequires:  maven30-maven-invoker-plugin
-BuildRequires:  maven30-maven-plugin-plugin
-BuildRequires:  maven30-maven-plugin-testing-harness
-BuildRequires:  maven30-maven-site-plugin
-BuildRequires:  maven30-maven-source-plugin
-BuildRequires:  maven30-maven-surefire-plugin
+BuildRequires:  %{?scl_prefix}maven-antrun-plugin
+BuildRequires:  %{?scl_prefix}maven-dependency-plugin
+BuildRequires:  %{?scl_prefix}maven-install-plugin
+BuildRequires:  %{?scl_prefix}maven-invoker-plugin
+BuildRequires:  %{?scl_prefix}maven-plugin-plugin
+BuildRequires:  %{?scl_prefix}maven-plugin-testing-harness
+BuildRequires:  %{?scl_prefix}maven-site-plugin
+BuildRequires:  %{?scl_prefix}maven-source-plugin
+BuildRequires:  %{?scl_prefix}maven-surefire-plugin
 
-BuildRequires:  maven30-ant-antunit
+BuildRequires:  %{?scl_prefix}ant-antunit
 BuildRequires:  %{?scl_prefix_java_common}ant-testutil
 BuildRequires:  %{?scl_prefix_java_common}apache-commons-compress
 
@@ -87,7 +87,7 @@ This package contains the API documentation for %{pkg_name}.
 
 %prep
 %setup -q -n %{pkg_name}-%{version}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %patch0 -p1 -b .doxia-1.1
 %patch1 -p1 -b .compat
@@ -100,13 +100,13 @@ set -e -x
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_build -f -s
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 
@@ -142,6 +142,9 @@ echo "apache-rat/rat-core apache-rat/rat-tasks" > $RPM_BUILD_ROOT%{_sysconfdir_j
 
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0.8-13.19
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 0.8-13.18
 - maven33 rebuild
 
