@@ -7,7 +7,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        0.8
-Release:        13.19%{?dist}
+Release:        13.20%{?dist}
 Summary:        Apache Release Audit Tool (RAT)
 
 License:        ASL 2.0
@@ -22,7 +22,7 @@ Patch2:         apache-rat-0.8-test.patch
 BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix_java_common}javapackages-tools
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:  %{?scl_prefix}maven-antrun-plugin
 BuildRequires:  %{?scl_prefix}maven-dependency-plugin
 BuildRequires:  %{?scl_prefix}maven-install-plugin
@@ -142,6 +142,9 @@ echo "apache-rat/rat-core apache-rat/rat-tasks" > $RPM_BUILD_ROOT%{_sysconfdir_j
 
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0.8-13.20
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0.8-13.19
 - maven33 rebuild #2
 
